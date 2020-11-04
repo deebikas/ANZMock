@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Account Details</title>
+</head>
+<body>
+
+<table class="table tab">
+    <thead>
+    <tr>
+        <th>Account Number</th>
+        <th>Account Name</th>
+        <th>Date</th>
+        <th>Currency</th>
+        <th>Debit Amount</th>
+        <th>Credit Amount</th>
+        <th>Debit/Credit</th>
+        <th>Narration</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="account : ${details}">
+        <td th:text="${account.accountNumber}"></td>
+        <td th:text="${account.accountName}"></td>
+        <td th:text="${account.date}"></td>
+        <td th:text="${account.currency}"></td>
+        <td th:text="${account.creditAmount}"></td>
+        <td th:text="${account.debitAmount}"></td>
+        <td th:text="${account.creditOrDebit}"></td>
+        <td th:text="${account.narration}"></td>
+    </tr>
+
+    </tbody>
+</table>
+
+<p>Click <a th:href="@{/getAccountsList}">here</a> to go to Accounts List screen</p>
+
+</body>
+</html>
